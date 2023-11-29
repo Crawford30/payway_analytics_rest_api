@@ -22,8 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::group(['namespace' => 'Api', 'middleware' => 'return-json'], function () {
-
-Route::get('/transactions', [TransactionController::class, 'index']);
-Route::get('/dashboard', [TransactionController::class, 'getDashboardData']);
-
+    Route::get('/transactions', [TransactionController::class, 'index']);
+    Route::get('/transactions/{id}', [TransactionController::class, 'show']);
+    Route::get('/dashboard', [TransactionController::class, 'getDashboardData']);
 });
