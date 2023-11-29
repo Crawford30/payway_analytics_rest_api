@@ -26,6 +26,9 @@ class TransactionController extends Controller
     }
 
 
+
+
+
     //====Get a single Transaction based on id====
     public function show($id)
     {
@@ -37,6 +40,10 @@ class TransactionController extends Controller
 
         return response()->json($transaction, 200);
     }
+
+
+
+
 
 
     public function getDashboardData()
@@ -51,6 +58,10 @@ class TransactionController extends Controller
 
         return response()->json($dashboardData, 200, [], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
     }
+
+
+
+
 
     public function getCategoryBreakdown()
     {
