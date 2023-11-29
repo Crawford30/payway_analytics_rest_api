@@ -41,16 +41,71 @@ class TransactionController extends Controller
 
     public function getDashboardData()
     {
-    //========Get dashbboard statistics data =======
+        //========Get dashbboard statistics data =======
         $dashboardData = [
             'total_deposits' => Transaction::where('type', 'Deposit')->sum('amount'),
             'total_withdrawals' => Transaction::where('type', 'Withdraw')->sum('amount'),
-            'category_breakdown' => Transaction::select('category', \DB::raw('SUM(amount) as total_amount'))
-                ->groupBy('category')
-                ->orderBy('total_amount', 'desc')
-                ->get(),
+            'category_breakdown' => $this->getCategoryBreakdown(),
+            'daily_statistics' => $this->getDailyStatistics(),
         ];
 
-        return response()->json($dashboardData, 200);
+        return response()->json($dashboardData, 200, [], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+    }
+
+    public function getCategoryBreakdown()
+    {
+        //=======Get all transactions grouped by category and type =====
+        $transactions = Transaction::selectRaw('category, type, SUM(amount) as total_amount')
+            ->groupBy('category', 'type')
+            ->get();
+
+        //======Processing the data =========
+        $categoryBreakdown = [];
+
+        foreach ($transactions as $transaction) {
+            $category = $transaction->category;
+            $type = $transaction->type;
+            $totalAmount = $transaction->total_amount;
+
+            if (!isset($categoryBreakdown[$category])) {
+                $categoryBreakdown[$category] = [
+                    'category' => $category,
+                    'withdrawal_amount' => 0,
+                    'deposit_amount' => 0,
+                ];
+            }
+
+            //======Assign the total amount to the corresponding type (Withdraw or Deposit)=======
+            $categoryBreakdown[$category][$type == 'Withdraw' ? 'withdrawal_amount' : 'deposit_amount'] = $totalAmount;
+        }
+
+        //==========Convert the associative array to indexed array=======
+        $categoryBreakdown = array_values($categoryBreakdown);
+
+        return $categoryBreakdown;
+    }
+
+
+
+
+
+    public function getDailyStatistics()
+    {
+        //=======Get all transactions grouped by date ========
+        $transactions = Transaction::selectRaw('DATE(tx_finish) as date, SUM(CASE WHEN type = "Deposit" THEN amount ELSE 0 END) as total_deposits, SUM(CASE WHEN type = "Withdraw" THEN amount ELSE 0 END) as total_withdrawals')
+            ->groupBy('date')
+            ->get();
+
+        //======Processing the data =========
+        $dailyStatistics = [];
+        foreach ($transactions as $transaction) {
+            $dailyStatistics[] = [
+                'transaction_date' => $transaction->date,
+                'total_deposits' => $transaction->total_deposits,
+                'total_withdrawals' => ($transaction->total_withdrawals),
+            ];
+        }
+
+        return $dailyStatistics;
     }
 }
