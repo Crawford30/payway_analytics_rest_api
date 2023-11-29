@@ -13,12 +13,6 @@ class TransactionsTableSeeder extends CsvSeeder
     public function __construct()
 	{
 
-        // $table->dateTime('tx_finish');
-        // $table->integer('amount');
-        // $table->string('type'); //This can made to an enum type
-        // $table->string('service');
-        // $table->string('category');
-
         $this->table = 'transactions';
         $this->csv_delimiter = ',';
         $this->filename = base_path().'/database/seeders/csvs/sample_data.csv';
@@ -30,8 +24,6 @@ class TransactionsTableSeeder extends CsvSeeder
             3 => 'service',
             4 => 'category',
         ];
-
-
 
         $this->should_trim = true;
         $this->timestamps = true;
@@ -48,7 +40,7 @@ class TransactionsTableSeeder extends CsvSeeder
         // Recommended when importing larger CSVs
 		DB::disableQueryLog();
 
-		// Uncomment the below to wipe the table clean before populating
+		//Wipe the table before populating with data
 		DB::table($this->table)->truncate();
 
 		parent::run();
