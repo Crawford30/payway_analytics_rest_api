@@ -32,20 +32,20 @@
 -> Make sure the server is running (XAMPP, WAMP, or any server environment you are using).
 
 ### 10. Generate Application Key
--> Run php artisan key:generate to generate the application key.
+-> Run _php artisan key:generate_ to generate the application key.
 
 ### 11. Create Database Tables
--> Run php artisan migrate to create the necessary database tables.
+-> Run _php artisan migrate_ to create the necessary database tables.
 
-### 12. Seed Database
--> Run php artisan db:seed to seed the database with the CSV file.
+### 12. Seed Database (Very Important Step)
+-> Run _php artisan db:seed_ to seed the database with the CSV file.
 
 ### 13. Clear Configuration (if necessary)
--> php artisan config:clear
--> php artisan config:cache
+-> _php artisan config:clear_
+-> _php artisan config:cache_
 
 ### 14. Start Development Server
--> Run php artisan serve to start the development server.
+-> Run _php artisan serve_ to start the development server.
 
 ### 15. Copy Base URL
 -> Copy the URL provided by the development server and use it as the base URL in the Android app(In the android project located in Util/Contants)
