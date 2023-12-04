@@ -67,7 +67,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 # payway_analytics_rest_api
 
 
-Instructions:
+### Instructions:
 
 ## 1. Clone the Repository
 -> Clone the repository from https://github.com/Crawford30/payway_analytics_rest_api.git into the .htdocs folder.
