@@ -48,13 +48,15 @@
 -> Run _php artisan serve_ to start the development server.
 
 ### 15. Copy Base URL
--> Copy the URL provided by the development server and use it as the base URL in the Android app(In the android project located in Util/Contants)
+-> Copy the URL provided by the development server and use it as the base URL in the Android app(In the android project located in **Util/Contants**)
 
 ### 16. Mock the api
--> You can mock the api by running it in POSTMAN and then copy the mocked URL as the base URL as in the Util/Contants file now in the android app.
+-> You can mock the api by running it in POSTMAN and then copy the mocked URL as the base URL as in the **Util/Contants** file now in the android app.
+
 
 
 ## Note:
-The project uses the latest Laravel and PHP 8.
+1. The project uses the latest Laravel and PHP 8.
+2. Android link repo: https://github.com/Crawford30/android_wallet_analytics_payway.git
 
 
