@@ -1,5 +1,5 @@
 
-# payway_analytics_rest_api
+# web_wallet_analytics_payway_rest_api
 
 
 # Instructions:
