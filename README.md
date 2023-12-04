@@ -7,7 +7,7 @@
 ### 1. Clone the Repository
 -> Clone the repository from https://github.com/Crawford30/web_wallet_analytics_payway_rest_api.git into the .htdocs folder.
 
-### 2. Install Server Software:
+### 2. Install Server Software
 -> Make sure you have XAMPP or WAMP installed for Windows, MAMP for Mac, or LAMP for Linux.
 
 ### 3. Install Composer Dependencies
@@ -19,10 +19,10 @@
 ### 5. Create Database
 -> Create a database of your choice (e.g., PayWayDB).
 
-### 6. Copy Environment File:
+### 6. Copy Environment File
 -> Copy .env.example to .env.
 
-### 7. Update Database Configuration:
+### 7. Update Database Configuration
 -> Open .env and update the database name to the one you created.
 
 ### 8. Navigate to Project Directory
