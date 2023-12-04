@@ -64,10 +64,19 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+
+
+
+
+
+
+
 # payway_analytics_rest_api
 
 
-### Instructions:
+# Instructions:
 
 ## 1. Clone the Repository
 -> Clone the repository from https://github.com/Crawford30/payway_analytics_rest_api.git into the .htdocs folder.
@@ -76,8 +85,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 -> Make sure you have XAMPP or WAMP installed for Windows, MAMP for Mac, or LAMP for Linux.
 
 ## 3. Install Composer Dependencies
-Install Composer first.
--> Run composer install in the project directory via the command line.
+-> Run composer install in the project directory via the command line to install composer first.
 
 ## 4. Move Web Application to Root
 -> The "Web Application" folder should be placed in the root directory (inside .htdocs for XAMPP or WAMP).
