@@ -5,7 +5,7 @@
 # Instructions:
 
 ### 1. Clone the Repository
--> Clone the repository from https://github.com/Crawford30/payway_analytics_rest_api.git into the .htdocs folder.
+-> Clone the repository from https://github.com/Crawford30/web_wallet_analytics_payway_rest_api.git into the .htdocs folder.
 
 ### 2. Install Server Software:
 -> Make sure you have XAMPP or WAMP installed for Windows, MAMP for Mac, or LAMP for Linux.
